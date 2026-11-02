@@ -52,6 +52,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 prefixIcon: const Icon(Icons.link),
               ),
             ),
+            const SizedBox(height: 20),
+            _isLoading
+                ? const CircularProgressIndicator()
+                : ElevatedButton.icon(
+                    onPressed: _searchVideo,
+                    label: const Text('Fetch Video'),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(50),
+                    ),
+                  ),
           ],
         ),
       ),
