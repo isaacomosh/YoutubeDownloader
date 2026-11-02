@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import './providers/download_provider.dart';
+import './screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => DownloadProvider())],
+      child: const YoutubeDownloaderApp(),
+    ),
+  );
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class YoutubeDownloaderApp extends StatelessWidget {
+  const YoutubeDownloaderApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      title: 'YouTube Downloader',
+      theme: ThemeData(primarySwatch: Colors.red, useMaterial3: true),
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
