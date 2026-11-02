@@ -30,7 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  youtube_explode_dart: ^2.1.2     # To fetch video info and streams
+  provider: ^6.1.1                # For state management
+  path_provider: ^2.1.2           # To find local storage directories
+  permission_handler: ^11.3.0     # To request storage/media permissions
+  dio: ^5.4.0                     # For downloading files with progress tracking
+  percent_indicator: ^4.2.3
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
